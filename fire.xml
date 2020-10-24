@@ -52,20 +52,6 @@
   </Rule>
 </Style>
 
-<Style name="emergency_access_point">
-  <Rule>
-    <ShieldSymbolizer face-name="DejaVu Sans Bold" size="6" fill="red" dx="0" dy="14" unlock-image="True"
-                       file="[base]/emergency_access_point.svg" margin="0" allow-overlap="true" opacity="0.7" halo-radius="1"
-     >[name]</ShieldSymbolizer>
-  </Rule>
-</Style>
-
-<Style name="defibrillator">
-  <Rule>
-    <PointSymbolizer file="[base]/defibrillator.svg"  opacity="0.7"/>
-  </Rule>
-</Style>
-
 <Style name="pond">
   <Rule>
     <PointSymbolizer file="[base]/pond.svg"  opacity="0.7"/>
@@ -114,37 +100,6 @@
         fire_symbol_color()           AS color
         FROM planet_osm_point
        WHERE tags->'emergency' = 'fire_hydrant'
-     ) AS way
-    </Parameter>
-    <Parameter name="geometry_field">way</Parameter>
-  </Datasource>
-</Layer>
-
-<Layer name="emergency_access_point" status="on"  srs="+init=epsg:3857">
-  <StyleName>emergency_access_point</StyleName>
-  <Datasource base="gis">
-    <Parameter name="table">
-     (SELECT way,
-             COALESCE(name,ref)  AS name,
-             fire_symbol_dir()   AS base,
-             fire_symbol_color() AS color
-        FROM planet_osm_point
-       WHERE highway = 'emergency_access_point'
-     ) AS way
-    </Parameter>
-    <Parameter name="geometry_field">way</Parameter>
-  </Datasource>
-</Layer>
-
-<Layer name="defibrillator" status="on"  srs="+init=epsg:3857">
-  <StyleName>defibrillator</StyleName>
-  <Datasource base="gis">
-    <Parameter name="table">
-     (SELECT way,
-             fire_symbol_dir()   AS base,
-             fire_symbol_color() AS color
-        FROM planet_osm_point
-       WHERE tags->'emergency' = 'defibrillator'
      ) AS way
     </Parameter>
     <Parameter name="geometry_field">way</Parameter>

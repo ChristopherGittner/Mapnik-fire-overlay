@@ -83,24 +83,6 @@
                 "node",
 		"area"
             ] 
-        },
-	{
-	    "description": "Emergency access points",
-            "key": "highway",
-	    "value": "emergency_access_point",
-	    "icon_url": "https://raw.githubusercontent.com/hholzgra/Mapnik-fire-overlay/master/symbols/png/emergency_access_point.png",
-            "object_types": [
-                "node"
-            ]    
-        },
-	{
-	    "description": "Defibrillator",
-            "key": "emergency",
-	    "value": "defibrillator",
-	    "icon_url": "https://raw.githubusercontent.com/hholzgra/Mapnik-fire-overlay/master/symbols/png/defibrillator.png",
-            "object_types": [
-                "node"
-            ]  
         }
     ]
 }

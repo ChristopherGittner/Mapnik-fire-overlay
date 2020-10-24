@@ -6,8 +6,6 @@ Mapnik style for fire hydrants and other emergency related things
 
 * Fire stations
 * Fire hydrants, suction points, and other water sources
-* Emergency access points
-* Defibrilators
 
 ## Special features
 
